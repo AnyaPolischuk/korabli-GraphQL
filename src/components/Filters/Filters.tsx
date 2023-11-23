@@ -1,7 +1,9 @@
-import React, { useMemo, useState, useEffect, FC } from "react";
+import React, { useMemo } from "react";
 import { useQuery } from '@apollo/client';
 import { ALL_SHIPS } from '../../apollo/korabli';
 import { IShips } from '../../types/shipType';
+
+import classes from './Filters.module.css';
 
 interface IFilters {
   nation: string,
@@ -20,7 +22,7 @@ export const Filters: React.FC<IFilters> = ({
   setClassType,
   setLevelFilter
 }) => {
-  const { loading, error, data } = useQuery(ALL_SHIPS);
+  const { data } = useQuery(ALL_SHIPS);
 
   const nationList = useMemo(() => {
     let nationList: string[] = [];
@@ -56,28 +58,30 @@ export const Filters: React.FC<IFilters> = ({
 
   return (
     <>
-      <select value={nation} onChange={handleNations}>
-      <option value="all-nations">All nations</option>
-        {nationList.length && (
-          nationList.map((nation: string, index: number) => (
-            <option key={index} value={nation}>{nation}</option>
-          ))
-        )}
-      </select>
+      <div className={classes.container}>
+        <select className={classes.filter} value={nation} onChange={handleNations}>
+        <option value="all-nations">All nations</option>
+          {nationList.length && (
+            nationList.map((nation: string, index: number) => (
+              <option key={index} value={nation}>{nation}</option>
+            ))
+          )}
+        </select>
 
-      <select value={classType} onChange={handleClassType}>
-      <option value="all-classes">All classes</option>
-        {classList.length && (
-          classList.map((classType: string, index: number) => (
-            <option key={index} value={classType}>{classType}</option>
-          ))
-        )}
-      </select>
+        <select className={classes.filter} value={classType} onChange={handleClassType}>
+        <option value="all-classes">All classes</option>
+          {classList.length && (
+            classList.map((classType: string, index: number) => (
+              <option key={index} value={classType}>{classType}</option>
+            ))
+          )}
+        </select>
 
-      <select value={levelFilter} onChange={handleLevelFilter}>
-        <option value="ascending">Ascending</option>
-        <option value="descending">Descending</option>
-      </select>
+        <select className={classes.filter} value={levelFilter} onChange={handleLevelFilter}>
+          <option value="ascending">Ascending</option>
+          <option value="descending">Descending</option>
+        </select>
+      </div>
     </>
   )
 }
