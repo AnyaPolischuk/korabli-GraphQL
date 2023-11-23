@@ -8,30 +8,25 @@ export interface IShips {
   nation: Nation
   __typename: string
 }
-
-export interface Icons {
+interface Icons {
   large: string
   medium: string
 }
-
-export interface Type {
+interface Type {
   name: string
   title: string
   icons: Icons2
 }
-
-export interface Icons2 {
+interface Icons2 {
   default: string
 }
-
-export interface Nation {
+interface Nation {
   name: string
   title: string
   color: string
   icons: Icons3
 }
-
-export interface Icons3 {
+interface Icons3 {
   small: string
   medium: any
   large: string
