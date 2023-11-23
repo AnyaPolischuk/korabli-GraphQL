@@ -2,7 +2,7 @@
 
 In this project i use GraphQL for getting data. Also i did filters for ships(by class, nation and level)
 
-![Korabli](image.png)
+(![korabli](<Снимок экрана (9).png>))
 
 ## Available Scripts
 
