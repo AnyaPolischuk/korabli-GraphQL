@@ -1,4 +1,3 @@
-import { IShips } from "../../types/shipType";
 import classes from './ShipLittleCard.module.css';
 
 interface IInfo {
@@ -9,6 +8,7 @@ interface IInfo {
   level: number,
   description: string,
   image: string,
+  flagImage: string
 }
 
 export const ShipLittleCard: React.FC<IInfo> = ({
@@ -18,19 +18,38 @@ export const ShipLittleCard: React.FC<IInfo> = ({
   nation,
   level,
   description,
-  image
+  image,
+  flagImage
   }) => {
 
   return (
     <>
-      <div className={classes.cardContainer}>
-        <h1>{title}</h1>
-        <h2>{type}</h2>
-        <h3>{nation}</h3>
-        <h3>{level}</h3>
-        <p>{description}</p>
-        <img alt={title} src={image} />
-      </div>
+        <div className={classes.cardsWrapper}>
+          <div className={classes.cardHeader}>
+            <div>
+              <h2 className={classes.title}>{title}</h2>
+              <h3 className={classes.shipType}>{type}</h3>
+            </div>
+            <div>
+              <img alt={nation} src={flagImage} className={classes.flagImage} />
+              <p className={classes.nation}>{nation}</p>
+            </div>
+          </div>
+          
+          <div>
+            <p className={classes.description}>{description.split(' ').slice(0, 20).join(' ')}...</p>
+            <button className={classes.button}>learn more</button>
+          </div>
+          <div className={classes.cardFooter}>
+            <div>
+              <img className={classes.shipImage} alt={title} src={image}></img>
+            </div>
+            <div className={classes.levelWrapper}>
+              <p className={classes.level}>{level}</p>
+              <h4 className={classes.levelText}>Level</h4>
+            </div>
+          </div>
+        </div>
     </>
   )
 }

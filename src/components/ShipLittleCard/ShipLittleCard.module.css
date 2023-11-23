@@ -1,15 +1,108 @@
-.cardContainer {
-  width: 300px;
-  height: 300px;
-  border: 2px solid green;
-  margin-bottom: 10px;
-}
-
-h1, h2, h3, p {
-  font-size: 10px;
-}
-
 img {
   width: 200px;
   height: 100px;
 }
+
+.cardsWrapper {
+  width: 300px;
+  height: 300px;
+  -webkit-box-shadow: 2px -7px 13px 4px rgba(43, 102, 157, 0.28) inset;
+-moz-box-shadow: 2px -7px 13px 4px rgba(43, 102, 157, 0.28) inset;
+box-shadow: 2px -7px 13px 4px rgba(43, 102, 157, 0.28) inset;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flagImage {
+  filter: brightness(0.4);
+}
+
+.flagImage:hover {
+  filter: brightness(0.7);
+  color: white;
+}
+
+.nation {
+  position: absolute;
+  top: 35px;
+  left: 120px;
+  font-size: 23px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.281);
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.description {
+  padding: 5px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.555);
+  text-align: justify
+}
+
+.button {
+  position: absolute;
+  top: 170px;
+  right: 10px;
+  color: white;
+  width: 100px;
+  height: 30px;
+  background-image: linear-gradient(0deg,#e12e00 0,#fd6200);
+  border: 0;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 5px;
+  color: white;
+}
+
+.shipType {
+  font-size: 12px;
+  font-weight: 100;
+  padding-left: 5px;
+  color: white;
+}
+
+.shipImage {
+  position: absolute;
+  left: -5px;
+  bottom: 6px
+}
+
+.levelWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 40px;
+  margin-top: 40px;
+}
+
+.level {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+  color: white;
+}
+
+.levelText {
+  font-size: 10px;
+  font-weight: 100;
+  margin-top: 0;
+  color: white;
+}
+
+
